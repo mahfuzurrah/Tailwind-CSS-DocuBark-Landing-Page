@@ -10,17 +10,27 @@ body {
   font-family: "Inter", sans-serif;
   background: #fff;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
+.container {
+  max-width: 1400px;
+  padding: 0 30px;
+  margin: auto;
+}
+
+#shadow-host-companion {
+  display: none;
+}
 /* Hamburger Menu */
 
-#hero {
-  background: #574fec;
-  background: linear-gradient(180deg, #7a74f0 0, #574fec) !important;
+.hero {
+  background: #000080;
+  background: linear-gradient(180deg, #000080 0, #000080) !important;
   /* z-index: -999; */
 }
 

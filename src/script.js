@@ -1,85 +1,87 @@
 /*------------------------------------------------------------------
-	    Navbar Toggle
-	------------------------------------------------------------------*/
+    Navbar Toggle
+------------------------------------------------------------------*/
 
-const btn = document.getElementById('menu-btn')
-const nav = document.getElementById('menu')
-const navItem = document.getElementById('menu')
+const btn = document.getElementById('menu-btn');
+const nav = document.getElementById('menu');
+const navItems = document.querySelectorAll('#menu li'); // Select all menu items
 
 btn.addEventListener('click', () => {
-	btn.classList.toggle('open')
-	nav.classList.toggle('flex')
-	nav.classList.toggle('hidden')
+	btn.classList.toggle('open');
+	nav.classList.toggle('flex');
+	nav.classList.toggle('hidden');
 });
-navItem.addEventListener('click', () => {
-	navItem.classList.toggle('hidden')
-	btn.classList.toggle('open')
+
+// Add click event to each menu item to close the menu when clicked
+navItems.forEach((item) => {
+	item.addEventListener('click', () => {
+		nav.classList.add('hidden');
+		btn.classList.remove('open');
+	});
 });
 
 /*------------------------------------------------------------------
-    Contact
+    Contact Form
 ------------------------------------------------------------------*/
 
-var toggleInputContainer = function (input) {
-	if (input.value != "") {
+const toggleInputContainer = (input) => {
+	if (input.value !== "") {
 		input.classList.add('filled');
 	} else {
 		input.classList.remove('filled');
 	}
-}
+};
 
-var labels = document.querySelectorAll('.label');
-for (var i = 0; i < labels.length; i++) {
-	labels[i].addEventListener('click', function () {
+// Add click event to labels to focus on the associated input
+document.querySelectorAll('.label').forEach((label) => {
+	label.addEventListener('click', function () {
 		this.previousElementSibling.focus();
 	});
-}
+});
 
-window.addEventListener("load", function () {
-	var inputs = document.getElementsByClassName("input");
-	for (var i = 0; i < inputs.length; i++) {
-		console.log('looped');
-		inputs[i].addEventListener('keyup', function () {
+// Add event listener to inputs on page load
+window.addEventListener('load', () => {
+	const inputs = document.querySelectorAll('.input');
+	inputs.forEach((input) => {
+		// Trigger toggleInputContainer on keyup and on load
+		input.addEventListener('keyup', function () {
 			toggleInputContainer(this);
 		});
-		toggleInputContainer(inputs[i]);
-	}
-})
+		toggleInputContainer(input);
+	});
+});
 
+/*------------------------------------------------------------------
+    jQuery Functions
+------------------------------------------------------------------*/
 $(function () {
 	'use strict';
 
 	/*------------------------------------------------------------------
-		    window onload
+		    Window onload
 	------------------------------------------------------------------*/
 	window.onload = function () {
-		window.setTimeout(
-			function () {
-				window.scrollTo(0, 0);
-			},
-			10
-		);
+		window.setTimeout(() => {
+			window.scrollTo(0, 0);
+		}, 10);
 	};
-
 
 	/*------------------------------------------------------------------
 	    Scroll to Top
 	------------------------------------------------------------------*/
-	var btn = $('.scroll-to-top');
+	const scrollToTopBtn = $('.scroll-to-top');
 
 	$(window).scroll(function () {
 		if ($(window).scrollTop() > 300) {
-			btn.addClass('show');
+			scrollToTopBtn.addClass('show');
 		} else {
-			btn.removeClass('show');
+			scrollToTopBtn.removeClass('show');
 		}
 	});
 
-	btn.on('click', function (e) {
+	scrollToTopBtn.on('click', function (e) {
 		e.preventDefault();
-		$('html, body').animate({
-			scrollTop: 0
-		}, '300');
+		$('html, body').animate({ scrollTop: 0 }, '300');
 	});
 
 	/*------------------------------------------------------------------
@@ -92,5 +94,4 @@ $(function () {
 			$('#navbar').removeClass('sticky-menu');
 		}
 	});
-
-})
+});

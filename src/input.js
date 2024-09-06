@@ -1,64 +1,81 @@
-// /*------------------------------------------------------------------
-// 	    Navbar Toggle
-// 	------------------------------------------------------------------*/
-
-// const btn = document.getElementById("menu-btn");
-// const nav = document.getElementById("menu");
-// const navItem = document.getElementById("menu");
-
-// btn.addEventListener("click", () => {
-//   btn.classList.toggle("open");
-//   nav.classList.toggle("flex");
-//   nav.classList.toggle("hidden");
-// });
-// navItem.addEventListener("click", () => {
-//   navItem.classList.toggle("hidden");
-//   btn.classList.toggle("open");
-// });
-
 /*------------------------------------------------------------------
-    Contact
+    Navbar Toggle
 ------------------------------------------------------------------*/
 
-var toggleInputContainer = function (input) {
-  if (input.value != "") {
+const btn = document.getElementById("menu-btn");
+const nav = document.getElementById("menu");
+// Select all navigation items inside the menu
+const navItems = document.querySelectorAll("#menu li");
+
+btn.addEventListener("click", () => {
+  btn.classList.toggle("open");
+  nav.classList.toggle("flex");
+  nav.classList.toggle("hidden");
+});
+
+// Add click event to each navigation item to close the menu when clicked
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    nav.classList.add("hidden");
+    btn.classList.remove("open");
+  });
+});
+
+/*------------------------------------------------------------------
+    Contact Form
+------------------------------------------------------------------*/
+
+const toggleInputContainer = function (input) {
+  if (input.value !== "") {
     input.classList.add("filled");
   } else {
     input.classList.remove("filled");
   }
 };
 
-var labels = document.querySelectorAll(".label");
-for (var i = 0; i < labels.length; i++) {
-  labels[i].addEventListener("click", function () {
+// Add click event to labels to focus on the associated input
+const labels = document.querySelectorAll(".label");
+labels.forEach((label) => {
+  label.addEventListener("click", function () {
     this.previousElementSibling.focus();
   });
-}
+});
 
+// Initialize input fields on page load
 window.addEventListener("load", function () {
-  var inputs = document.getElementsByClassName("input");
-  for (var i = 0; i < inputs.length; i++) {
+  const inputs = document.querySelectorAll(".input");
+  inputs.forEach((input) => {
     console.log("looped");
-    inputs[i].addEventListener("keyup", function () {
+    input.addEventListener("keyup", function () {
       toggleInputContainer(this);
     });
-    toggleInputContainer(inputs[i]);
-  }
+    toggleInputContainer(input);
+  });
 });
+
+/*------------------------------------------------------------------
+    Password Toggle
+------------------------------------------------------------------*/
 
 const passwordToggle = document.querySelector(".js-password-toggle");
 
-passwordToggle.addEventListener("change", function () {
-  const password = document.querySelector(".js-password"),
-    passwordLabel = document.querySelector(".js-password-label");
+if (passwordToggle) {
+  passwordToggle.addEventListener("change", function () {
+    const password = document.querySelector(".js-password");
+    const passwordLabel = document.querySelector(".js-password-label");
 
-  if (password.type === "password") {
-    password.type = "text";
-    passwordLabel.innerHTML = "hide";
-  } else {
-    password.type = "password";
-    passwordLabel.innerHTML = "show";
-  }
+    if (password && passwordLabel) {
+      if (password.type === "password") {
+        password.type = "text";
+        passwordLabel.innerHTML = "hide";
+      } else {
+        password.type = "password";
+        passwordLabel.innerHTML = "show";
+      }
 
-  password.focus();
-});
+      password.focus();
+    }
+  });
+}
+
+

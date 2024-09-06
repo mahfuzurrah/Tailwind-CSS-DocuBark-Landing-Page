@@ -127,36 +127,6 @@ section {
   left: 0;
 }
 
-#navbar.sticky-menu {
-  position: fixed !important;
-  top: 0;
-  background: rgb(255, 255, 255);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.089) !important;
-}
-
-#navbar.sticky-menu .logo1 {
-  display: none;
-}
-
-#navbar.sticky-menu .logo2 {
-  display: block;
-}
-
-#navbar.sticky-menu a {
-  color: #1c0950 !important;
-  font-weight: 500;
-}
-
-#navbar.sticky-menu .hamburger-top,
-#navbar.sticky-menu .hamburger-middle,
-#navbar.sticky-menu .hamburger-bottom {
-  background: #1c0950;
-}
-
-#navbar .logo2 {
-  display: none;
-}
-
 .scroll-to-top {
   width: 50px;
   height: 50px;

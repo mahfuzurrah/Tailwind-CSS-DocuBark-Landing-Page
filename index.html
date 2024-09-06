@@ -1,934 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smarty v5</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="./src/output.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocuBark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="scroll-to-top show flex items-center justify-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        fill="#ffffff"
-        class="bi bi-arrow-up-short"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"
-        />
-      </svg>
+  <link rel="stylesheet" href="./src/output.css" />
+</head>
+
+<body>
+  <div class="scroll-to-top show flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffffff" class="bi bi-arrow-up-short"
+      viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+    </svg>
+  </div>
+  <!-- Navbar -->
+  <nav class="sticky top-0 w-full z-50 bg-[#000080] py-6">
+    <!-- Flex container -->
+    <div class="container flex items-center justify-between mx-auto p-5">
+      <div class="pt-2">
+        <a href="#" class="logo1 text-[24px] font-semibold text-white">DocuBark</a>
+      </div>
+      <div class="hidden space-x-6 md:flex">
+        <a href="#home" class="text-white">HOME</a>
+        <a href="#features" class="text-white">FEATURES</a>
+        <a href="#pricing" class="text-white">PRICING</a>
+        <a href="#contact" class="text-white">CONTACT US</a>
+      </div>
+      <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
     </div>
-    <!-- Navbar -->
-    <nav class="sticky top-0 w-full z-50 bg-[#000080] py-6">
-      <!-- Flex container -->
-      <div class="container flex items-center justify-between mx-auto p-5">
-        <div class="pt-2">
-          <a href="#" class="logo1 text-[24px] font-semibold text-white"
-            >DocuBark</a
-          >
-        </div>
-        <div class="hidden space-x-6 md:flex">
-          <a href="#home" class="text-white">HOME</a>
-          <a href="#features" class="text-white">FEATURES</a>
-          <a href="#pricing" class="text-white">PRICING</a>
-          <a href="#contact" class="text-white">CONTACT US</a>
-        </div>
-        <button
-          id="menu-btn"
-          class="block hamburger md:hidden focus:outline-none"
-        >
-          <span class="hamburger-top"></span>
-          <span class="hamburger-middle"></span>
-          <span class="hamburger-bottom"></span>
-        </button>
-      </div>
 
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <div
-          id="menu"
-          class="absolute bg-white h-screen hidden self-end w-full sm:w-auto sm:self-center left-0 right-0 p-8"
-        >
-          <div class="flex flex-col font-bold gap-8">
-            <a href="index.html" class="text-white">HOME</a>
-            <a href="#" class="text-white">FEATURES</a>
-            <a href="#" class="text-white">PRICING</a>
-            <a href="#" class="text-white">CONTACT US</a>
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+      <div id="menu"
+        class="absolute bg-white h-screen hidden self-end w-full sm:w-auto sm:self-center left-0 right-0 p-8">
+        <div class="flex flex-col font-bold gap-8">
+          <a href="index.html" class="text-white">HOME</a>
+          <a href="#" class="text-white">FEATURES</a>
+          <a href="#" class="text-white">PRICING</a>
+          <a href="#" class="text-white">CONTACT US</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main">
+    <!-- Hero Section -->
+    <section class="relative lg:h-bannerH md:pt-32 lg:pt-24 hero text-center lg:text-left">
+      <!-- Flex Container -->
+      <div class="container mx-auto p-5">
+        <div class="lg:flex items-center mx-auto space-y-0 md:space-y-0">
+          <!-- Left item -->
+          <div class="flex flex-col lg:w-1/2 w-full">
+            <h2 class="text-white font-bold lg:text-h2 text-h4">
+              Complete TPRM Vendor Assessments In Minutes
+            </h2>
+            <p class="text-white mb-12">
+              The simplest way to work together in the cloud! Start in one
+              step now, no credit card required.
+            </p>
+            <div>
+              <a href="#"
+                class="p-4 px-6 text-title bg-warning rounded-lg baseline hover:bg-brightRedLight font-medium">Start Now
+                <span class="font-normal"> - It's Free</span></a>
+            </div>
+          </div>
+          <!-- Image -->
+          <div class="lg:w-1/2 w-full mx-auto">
+            <img src="../img/using_product.png" alt="" />
           </div>
         </div>
       </div>
-    </nav>
+      <svg class="absolute bottom-0" viewBox="0 0 1200 120"
+        style="transform: rotate(180deg) rotateY(180deg); bottom: -1px">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#ffffff"></path>
+      </svg>
+    </section>
 
-    <div class="main">
-      <!-- Hero Section -->
-      <section
-        class="relative lg:h-bannerH md:pt-32 lg:pt-24 hero text-center lg:text-left"
-      >
-        <!-- Flex Container -->
-        <div class="container mx-auto p-5">
-          <div class="lg:flex items-center mx-auto space-y-0 md:space-y-0">
-            <!-- Left item -->
-            <div class="flex flex-col lg:w-1/2 w-full">
-              <h2 class="text-white font-bold lg:text-h2 text-h4">
-                Complete TPRM Vendor Assessments In Minutes
-              </h2>
-              <p class="text-white mb-12">
-                The simplest way to work together in the cloud! Start in one
-                step now, no credit card required.
+    <section>
+      <div class="container mx-auto p-5">
+        <div class="flex flex-col space-y-8">
+          <!-- Card 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+            <div>
+              <img src="../img/1.png" alt="" class="w-full object-cover rounded-xl" />
+            </div>
+            <div class="flex flex-col justify-center">
+              <h3 class="text-h3 font-bold mb-4">
+                Don't Wait Weeks For The Vendor To Respond
+              </h3>
+              <p class="text-lg">
+                Parse Vendor Documents To Fill Out Your Vendor Questionnaire
+                In Minutes
               </p>
-              <div>
-                <a
-                  href="#"
-                  class="p-4 px-6 text-title bg-warning rounded-lg baseline hover:bg-brightRedLight font-medium"
-                  >Start Now <span class="font-normal"> - It's Free</span></a
-                >
-              </div>
-            </div>
-            <!-- Image -->
-            <div class="lg:w-1/2 w-full mx-auto">
-              <img src="../img/using_product.png" alt="" />
             </div>
           </div>
-        </div>
-        <svg
-          class="absolute bottom-0"
-          viewBox="0 0 1200 120"
-          style="transform: rotate(180deg) rotateY(180deg); bottom: -1px"
-        >
-          <path
-            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-            fill="#ffffff"
-          ></path>
-        </svg>
-      </section>
 
-      <section>
-        <div class="container mx-auto p-5">
-          <div class="flex flex-col space-y-8">
-            <!-- Card 1 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-              <div>
-                <img
-                  src="../img/1.png"
-                  alt=""
-                  class="w-full object-cover rounded-xl"
-                />
-              </div>
+          <!-- Card 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 items-center">
+            <div class="order-1">
               <div class="flex flex-col justify-center">
                 <h3 class="text-h3 font-bold mb-4">
-                  Don't Wait Weeks For The Vendor To Respond
+                  Score Vendors How You Want To
                 </h3>
                 <p class="text-lg">
-                  Parse Vendor Documents To Fill Out Your Vendor Questionnaire
-                  In Minutes
+                  Use your own criteria to score vendor documents and data.
                 </p>
               </div>
             </div>
-
-            <!-- Card 2 -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 items-center"
-            >
-              <div class="order-1">
-                <div class="flex flex-col justify-center">
-                  <h3 class="text-h3 font-bold mb-4">
-                    Score Vendors How You Want To
-                  </h3>
-                  <p class="text-lg">
-                    Use your own criteria to score vendor documents and data.
-                  </p>
-                </div>
-              </div>
-              <div class="order-2">
-                <img
-                  src="../img/2.png"
-                  alt=""
-                  class="w-full object-cover rounded-xl"
-                />
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-              <div>
-                <img
-                  src="../img/3.png"
-                  alt=""
-                  class="w-full object-cover rounded-xl"
-                />
-              </div>
-              <div class="flex flex-col justify-center">
-                <h3 class="text-h3 font-bold mb-4">Maintain An Audit Trail</h3>
-                <p class="text-lg">
-                  Keep a clear record of all vendor evidence to show exactly how
-                  and why each vendor was scored.
-                </p>
-              </div>
+            <div class="order-2">
+              <img src="../img/2.png" alt="" class="w-full object-cover rounded-xl" />
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="bg-white" id="features">
-        <div class="container">
-          <div class="mb-8 lg:mb-16 text-center">
-            <h2
-              class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900"
-            >
-              Features
-            </h2>
-          </div>
-          <div
-            class="space-y-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:space-y-0"
-          >
-            <div class="p-4 bg-white border rounded-2xl">
-              <div
-                class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12"
-              >
-                <iconify-icon
-                  icon="mdi:code"
-                  class="text-[24px] text-white"
-                ></iconify-icon>
-              </div>
-              <h3 class="mb-2 text-xl font-bold">No-code tooling</h3>
-              <p class="text-gray-500">
-                Help your sales team own the customer journey eliminating
-                dependency on other teams.
-              </p>
+          <!-- Card 3 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+            <div>
+              <img src="../img/3.png" alt="" class="w-full object-cover rounded-xl" />
             </div>
-
-            <div class="p-4 bg-white border rounded-2xl">
-              <div
-                class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12"
-              >
-                <iconify-icon
-                  icon="mdi:code"
-                  class="text-[24px] text-white"
-                ></iconify-icon>
-              </div>
-              <h3 class="mb-2 text-xl font-bold">Supercharged env</h3>
-              <p class="text-gray-500">
-                Coast is ready to handle all the complexity of your API - from
-                custom auth, to background requests, to conditional rendering,
-                and much, much more!
-              </p>
-            </div>
-            <div class="p-4 bg-white border rounded-2xl">
-              <div
-                class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12"
-              >
-                <iconify-icon
-                  icon="mdi:code"
-                  class="text-[24px] text-white"
-                ></iconify-icon>
-              </div>
-              <h3 class="mb-2 text-xl font-bold">Ready for all audiences</h3>
-              <p class="text-gray-500">
-                Selling to technical decision makers? Go under the hood and look
-                at the code. Execs, BizOps or PMs? Flip the switch to access a
-                visual wrapper.
-              </p>
-            </div>
-
-            <div class="p-4 bg-white border rounded-2xl">
-              <div
-                class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12"
-              >
-                <iconify-icon
-                  icon="mdi:code"
-                  class="text-[24px] text-white"
-                ></iconify-icon>
-              </div>
-              <h3 class="mb-2 text-xl font-bold">Local database</h3>
-              <p class="text-gray-500">
-                Answering those questions and more is a tall order, but one you
-                should approach with enthusiasm.
-              </p>
-            </div>
-            <div class="p-4 bg-white border rounded-2xl">
-              <div
-                class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12"
-              >
-                <iconify-icon
-                  icon="mdi:code"
-                  class="text-[24px] text-white"
-                ></iconify-icon>
-              </div>
-              <h3 class="mb-2 text-xl font-bold">Embedded analytics</h3>
-              <p class="text-gray-500">
-                Get live insights on how and when prospects interact with your
-                demo to qualify leads and contact them when you're on their
-                mind.
-              </p>
-            </div>
-
-            <div class="p-4 bg-white border rounded-2xl">
-              <div
-                class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12"
-              >
-                <iconify-icon
-                  icon="mdi:code"
-                  class="text-[24px] text-white"
-                ></iconify-icon>
-              </div>
-              <h3 class="mb-2 text-xl font-bold">Connect to prod</h3>
-              <p class="text-gray-500">
-                Let prospects execute real requests with their own data to
-                create unforgettable experiences.
+            <div class="flex flex-col justify-center">
+              <h3 class="text-h3 font-bold mb-4">Maintain An Audit Trail</h3>
+              <p class="text-lg">
+                Keep a clear record of all vendor evidence to show exactly how
+                and why each vendor was scored.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="pricing" class="bg-white dark:bg-[#000080]">
-        <div class="container">
-          <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
-              Pricing
-            </h2>
-          </div>
-          <div
-            class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-6 xl:gap-10 lg:space-y-0"
-          >
-            <!-- Pricing Card -->
-            <div
-              class="flex flex-col p-2 mx-auto max-w-lg text-center text-white bg-[#ffffff21] rounded-lg border border-gray-100 shadow w-full"
-            >
-              <div class="p-4 bg-[#ffffff15] rounded-md h-[120px]">
-                <h3 class="text-2xl font-semibold">Tier 1</h3>
-                <div class="flex justify-center items-baseline mt-4">
-                  <span class="mr-2 text-4xl font-extrabold">$10k</span>
-                  <span class="text-gray-500 dark:text-gray-400">/yr</span>
-                </div>
-              </div>
-              <h5 class="text-h5 font-semibold mt-5">10,000 Questions</h5>
-              <h6 class="text-h6 font-semibold mt-5 bg-[#ffffff15] py-2">
-                Features
-              </h6>
-              <!-- List -->
-              <ul role="list" class="my-8 space-y-4 text-left px-3">
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Unlimited Users</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Unlimited Dashboards</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>GPT 4</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>SAML Integration</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Custom Prompt</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Vendor Anonymization</span>
-                </li>
-              </ul>
-            </div>
-            <!-- Pricing Card -->
-            <div
-              class="flex flex-col p-2 mx-auto max-w-lg text-center text-white bg-[#ffffff21] rounded-lg border border-gray-100 shadow w-full"
-            >
-              <div class="p-4 bg-[#ffffff15] rounded-md h-[120px]">
-                <h3 class="text-2xl font-semibold">Tier 2</h3>
-                <div class="flex justify-center items-baseline mt-4">
-                  <span class="mr-2 text-4xl font-extrabold">$20k</span>
-                  <span class="text-gray-500 dark:text-gray-400">/yr</span>
-                </div>
-              </div>
-              <h5 class="text-h5 font-semibold mt-5">40,000 Questions</h5>
-              <h6 class="text-h6 font-semibold mt-5 bg-[#ffffff15] py-2">
-                Features
-              </h6>
-              <!-- List -->
-              <ul role="list" class="my-8 space-y-4 text-left px-3">
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Unlimited Users</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Unlimited Dashboards</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>GPT 4</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>SAML Integration</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Custom Prompt</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Vendor Anonymization</span>
-                </li>
-              </ul>
-            </div>
-            <!-- Pricing Card -->
-            <div
-              class="flex flex-col p-2 mx-auto max-w-lg text-center text-white bg-[#ffffff21] rounded-lg border border-gray-100 shadow w-full"
-            >
-              <div class="p-4 bg-[#ffffff15] rounded-md h-[120px]">
-                <h3 class="text-2xl font-semibold">Tier 3</h3>
-                <div class="flex justify-center items-baseline mt-4">
-                  <span class="mr-2 text-4xl font-extrabold">$35k</span>
-                  <span class="text-gray-500 dark:text-gray-400">/yr</span>
-                </div>
-              </div>
-              <h5 class="text-h5 font-semibold mt-5">100,000 Questions</h5>
-              <h6 class="text-h6 font-semibold mt-5 bg-[#ffffff15] py-2">
-                Features
-              </h6>
-              <!-- List -->
-              <ul role="list" class="my-8 space-y-4 text-left px-3">
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Unlimited Users</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Unlimited Dashboards</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>GPT 4</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>SAML Integration</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Custom Prompt</span>
-                </li>
-                <li class="flex items-center space-x-3">
-                  <!-- Icon -->
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Vendor Anonymization</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <!-- <section class="bg-white" id="features">
+      <div class="container">
+        <div class="mb-8 lg:mb-16 text-center">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+            Features
+          </h2>
         </div>
-      </section>
-
-      <section>
-        <div class="container w-full">
-          <div class="text-center">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-black">
-              Works with Your Current Tools
-            </h2>
-            <p>
-              DocuBark integrates with your system of record, making the process
-              smoother.
+        <div class="space-y-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:space-y-0">
+          <div class="p-4 bg-white border rounded-2xl">
+            <div
+              class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12">
+              <iconify-icon icon="mdi:code" class="text-[24px] text-white"></iconify-icon>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">No-code tooling</h3>
+            <p class="text-gray-500">
+              Help your sales team own the customer journey eliminating
+              dependency on other teams.
             </p>
           </div>
-          <div
-            class="flex items-center justify-center md:justify-between flex-wrap gap-6 w-full mt-8"
-          >
-            <img
-              class="h-8 md:h-16 w-auto"
-              src="./img/logo/Brand 1.svg"
-              alt="Brand 1"
-            />
-            <img
-              class="h-8 md:h-16 w-auto"
-              src="./img/logo/Brand 2.svg"
-              alt="Brand 2"
-            />
-            <img
-              class="h-8 md:h-16 w-auto"
-              src="./img/logo/Brand 3.svg"
-              alt="Brand 3"
-            />
-            <img
-              class="h-8 md:h-16 w-auto"
-              src="./img/logo/Brand 4.svg"
-              alt="Brand 4"
-            />
-            <img
-              class="h-8 md:h-16 w-auto"
-              src="./img/logo/Brand 5.svg"
-              alt="Brand 5"
-            />
-          </div>
-        </div>
-      </section>
 
-      <section id="contact" class="bg-otBg3">
-        <div class="container mx-auto p-5">
-          <div class="flex lg:flex-row flex-col items-center lg:space-x-10">
-            <div class="space-y-8 w-full lg:w-1/2">
-              <div>
-                <h3 class="text-h3 font-bold text-title">Contact us</h3>
-                <p class="text-desc">Let us know how can we help you!</p>
-              </div>
-              <div class="flex space-x-16">
-                <div>
-                  <h6 class="text-h6 text-primary font-bold">Call Us</h6>
-                  <p class="mt-5 mb-1 text-desc">+01 785-388-9450</p>
-                  <p class="text-desc">john.doe@gmail.com</p>
-                </div>
-                <div>
-                  <h6 class="text-h6 text-primary font-bold">Our Address</h6>
-                  <p class="mt-5 mb-1 text-desc">Road 741, No.44, New York</p>
-                  <p class="text-desc">United States</p>
-                </div>
-              </div>
-              <div
-                class="bg-white shadow-lg shadow-indigo-100/50 rounded-lg mt-5"
-              >
-                <iframe
-                  src="https://api.mapbox.com/styles/v1/mahfuzuruiux/cl0hsp3my000p14o39wsmhmp3.html?title=false&access_token=pk.eyJ1IjoibWFoZnV6dXJ1aXV4IiwiYSI6ImNsMGhzYWRiMTA4bnkzY21scHE4c3locDgifQ.8rXcX1XkhGVAG86EFLgqlQ&zoomwheel=false#12.99/23.75338/90.37437"
-                  title="Basic"
-                  style="border: none; width: 100%; height: 400px; padding: 8px"
-                ></iframe>
-              </div>
-            </div>
-            <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
-              <div
-                class="shadow-lg shadow-indigo-100/50 p-10 bg-white rounded-lg"
-              >
-                <h3 class="text-h3 mb-4">Send us a message</h3>
-                <div class="mb-4 relative">
-                  <input
-                    class="input border appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
-                    id="email"
-                    type="text"
-                    autofocus
-                  />
-                  <label
-                    for="email"
-                    class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text"
-                    >Name</label
-                  >
-                </div>
-                <div class="mb-4 relative">
-                  <input
-                    class="input border appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
-                    id="email"
-                    type="text"
-                    autofocus
-                  />
-                  <label
-                    for="email"
-                    class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text"
-                    >Email</label
-                  >
-                </div>
-                <div class="mb-4 relative">
-                  <input
-                    class="input border before:after:appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
-                    id="email"
-                    type="text"
-                    autofocus
-                  />
-                  <label
-                    for="email"
-                    class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text"
-                    >Phone</label
-                  >
-                </div>
-                <div class="mb-4 relative">
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="3"
-                    class="input border appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
-                  ></textarea>
-                  <label
-                    for="password"
-                    class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text"
-                    >Message</label
-                  >
-                </div>
-                <div class="border rounded-md p-4">
-                  <p class="text-sm py-2 text-desc">
-                    I consent that my personal data is stored according to
-                    2016/679/UE (UE GDPR).
-                  </p>
-                  <hr />
-                  <div class="mt-4 flex items-center text-desc">
-                    <input
-                      type="checkbox"
-                      id="remember"
-                      name="remember"
-                      class="mr-2"
-                    />
-                    <label class="text-md" for="remember"
-                      >I do accept Smarty
-                      <a class="text-primary hover:text-primary"
-                        >terms & conditions.</a
-                      >
-                    </label>
-                  </div>
-                </div>
-
-                <button
-                  class="bg-primary hover:bg-blue-dark text-white font-bold py-3 px-6 w-full rounded-lg mt-7"
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--!Footer   -->
-
-      <footer class="bg-primary">
-        <div class="container">
-          <div class="px-4 py-6 md:flex md:items-center md:justify-between">
-            <span
-              class="text-sm text-gray-500 dark:text-gray-300 sm:text-center"
-              >© 2024 <a href="https://flowbite.com/">DocuBark</a>. All Rights
-              Reserved.
-            </span>
+          <div class="p-4 bg-white border rounded-2xl">
             <div
-              class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse"
-            >
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg
-                  class="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 8 19"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                    clip-rule="evenodd"
-                  />
+              class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12">
+              <iconify-icon icon="mdi:code" class="text-[24px] text-white"></iconify-icon>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Supercharged env</h3>
+            <p class="text-gray-500">
+              Coast is ready to handle all the complexity of your API - from
+              custom auth, to background requests, to conditional rendering,
+              and much, much more!
+            </p>
+          </div>
+          <div class="p-4 bg-white border rounded-2xl">
+            <div
+              class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12">
+              <iconify-icon icon="mdi:code" class="text-[24px] text-white"></iconify-icon>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Ready for all audiences</h3>
+            <p class="text-gray-500">
+              Selling to technical decision makers? Go under the hood and look
+              at the code. Execs, BizOps or PMs? Flip the switch to access a
+              visual wrapper.
+            </p>
+          </div>
+
+          <div class="p-4 bg-white border rounded-2xl">
+            <div
+              class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12">
+              <iconify-icon icon="mdi:code" class="text-[24px] text-white"></iconify-icon>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Local database</h3>
+            <p class="text-gray-500">
+              Answering those questions and more is a tall order, but one you
+              should approach with enthusiasm.
+            </p>
+          </div>
+          <div class="p-4 bg-white border rounded-2xl">
+            <div
+              class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12">
+              <iconify-icon icon="mdi:code" class="text-[24px] text-white"></iconify-icon>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Embedded analytics</h3>
+            <p class="text-gray-500">
+              Get live insights on how and when prospects interact with your
+              demo to qualify leads and contact them when you're on their
+              mind.
+            </p>
+          </div>
+
+          <div class="p-4 bg-white border rounded-2xl">
+            <div
+              class="flex justify-center items-center mb-4 w-[50px] h-[50px] rounded-full bg-primary lg:h-12 lg:w-12">
+              <iconify-icon icon="mdi:code" class="text-[24px] text-white"></iconify-icon>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Connect to prod</h3>
+            <p class="text-gray-500">
+              Let prospects execute real requests with their own data to
+              create unforgettable experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="pricing" class="bg-white dark:bg-[#000080]">
+      <div class="container">
+        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+            Pricing
+          </h2>
+        </div>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-6 xl:gap-10 lg:space-y-0">
+          <!-- Pricing Card -->
+          <div
+            class="flex flex-col p-2 mx-auto max-w-lg text-center text-white bg-[#ffffff21] rounded-lg border border-gray-100 shadow w-full">
+            <div class="p-4 bg-[#ffffff15] rounded-md h-[120px]">
+              <h3 class="text-2xl font-semibold">Tier 1</h3>
+              <div class="flex justify-center items-baseline mt-4">
+                <span class="mr-2 text-4xl font-extrabold">$10k</span>
+                <span class="text-gray-500 dark:text-gray-400">/yr</span>
+              </div>
+            </div>
+            <h5 class="text-h5 font-semibold mt-5">10,000 Questions</h5>
+            <h6 class="text-h6 font-semibold mt-5 bg-[#ffffff15] py-2">
+              Features
+            </h6>
+            <!-- List -->
+            <ul role="list" class="my-8 space-y-4 text-left px-3">
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                <span class="sr-only">Facebook page</span>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg
-                  class="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 21 16"
-                >
-                  <path
-                    d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"
-                  />
+                <span>Unlimited Users</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                <span class="sr-only">Discord community</span>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg
-                  class="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 17"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                    clip-rule="evenodd"
-                  />
+                <span>Unlimited Dashboards</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                <span class="sr-only">Twitter page</span>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg
-                  class="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-                    clip-rule="evenodd"
-                  />
+                <span>GPT 4</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                <span class="sr-only">GitHub account</span>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
-                <svg
-                  class="w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
-                    clip-rule="evenodd"
-                  />
+                <span>SAML Integration</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                <span class="sr-only">Dribbble account</span>
-              </a>
+                <span>Custom Prompt</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Vendor Anonymization</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Pricing Card -->
+          <div
+            class="flex flex-col p-2 mx-auto max-w-lg text-center text-white bg-[#ffffff21] rounded-lg border border-gray-100 shadow w-full">
+            <div class="p-4 bg-[#ffffff15] rounded-md h-[120px]">
+              <h3 class="text-2xl font-semibold">Tier 2</h3>
+              <div class="flex justify-center items-baseline mt-4">
+                <span class="mr-2 text-4xl font-extrabold">$20k</span>
+                <span class="text-gray-500 dark:text-gray-400">/yr</span>
+              </div>
+            </div>
+            <h5 class="text-h5 font-semibold mt-5">40,000 Questions</h5>
+            <h6 class="text-h6 font-semibold mt-5 bg-[#ffffff15] py-2">
+              Features
+            </h6>
+            <!-- List -->
+            <ul role="list" class="my-8 space-y-4 text-left px-3">
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Unlimited Users</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Unlimited Dashboards</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>GPT 4</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>SAML Integration</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Custom Prompt</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Vendor Anonymization</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Pricing Card -->
+          <div
+            class="flex flex-col p-2 mx-auto max-w-lg text-center text-white bg-[#ffffff21] rounded-lg border border-gray-100 shadow w-full">
+            <div class="p-4 bg-[#ffffff15] rounded-md h-[120px]">
+              <h3 class="text-2xl font-semibold">Tier 3</h3>
+              <div class="flex justify-center items-baseline mt-4">
+                <span class="mr-2 text-4xl font-extrabold">$35k</span>
+                <span class="text-gray-500 dark:text-gray-400">/yr</span>
+              </div>
+            </div>
+            <h5 class="text-h5 font-semibold mt-5">100,000 Questions</h5>
+            <h6 class="text-h6 font-semibold mt-5 bg-[#ffffff15] py-2">
+              Features
+            </h6>
+            <!-- List -->
+            <ul role="list" class="my-8 space-y-4 text-left px-3">
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Unlimited Users</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Unlimited Dashboards</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>GPT 4</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>SAML Integration</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Custom Prompt</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <!-- Icon -->
+                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Vendor Anonymization</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container w-full">
+        <div class="text-center">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-black">
+            Works with Your Current Tools
+          </h2>
+          <p>
+            DocuBark integrates with your system of record, making the process
+            smoother.
+          </p>
+        </div>
+        <div class="flex items-center justify-center md:justify-between flex-wrap gap-6 w-full mt-8">
+          <img class="h-8 md:h-16 w-auto" src="./img/logo/Brand 1.svg" alt="Brand 1" />
+          <img class="h-8 md:h-16 w-auto" src="./img/logo/Brand 2.svg" alt="Brand 2" />
+          <img class="h-8 md:h-16 w-auto" src="./img/logo/Brand 3.svg" alt="Brand 3" />
+          <img class="h-8 md:h-16 w-auto" src="./img/logo/Brand 4.svg" alt="Brand 4" />
+          <img class="h-8 md:h-16 w-auto" src="./img/logo/Brand 5.svg" alt="Brand 5" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-otBg3">
+      <div class="container mx-auto p-5">
+        <div class="flex lg:flex-row flex-col items-center lg:space-x-10">
+          <div class="space-y-8 w-full lg:w-1/2">
+            <div>
+              <h3 class="text-h3 font-bold text-title">Contact us</h3>
+              <p class="text-desc">Let us know how can we help you!</p>
+            </div>
+            <div class="flex space-x-16">
+              <div>
+                <h6 class="text-h6 text-primary font-bold">Call Us</h6>
+                <p class="mt-5 mb-1 text-desc">+01 785-388-9450</p>
+                <p class="text-desc">john.doe@gmail.com</p>
+              </div>
+              <div>
+                <h6 class="text-h6 text-primary font-bold">Our Address</h6>
+                <p class="mt-5 mb-1 text-desc">Road 741, No.44, New York</p>
+                <p class="text-desc">United States</p>
+              </div>
+            </div>
+            <div class="bg-white shadow-lg shadow-indigo-100/50 rounded-lg mt-5">
+              <iframe
+                src="https://api.mapbox.com/styles/v1/mahfuzuruiux/cl0hsp3my000p14o39wsmhmp3.html?title=false&access_token=pk.eyJ1IjoibWFoZnV6dXJ1aXV4IiwiYSI6ImNsMGhzYWRiMTA4bnkzY21scHE4c3locDgifQ.8rXcX1XkhGVAG86EFLgqlQ&zoomwheel=false#12.99/23.75338/90.37437"
+                title="Basic" style="border: none; width: 100%; height: 400px; padding: 8px"></iframe>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
+            <div class="shadow-lg shadow-indigo-100/50 p-10 bg-white rounded-lg">
+              <h3 class="text-h3 mb-4">Send us a message</h3>
+              <div class="mb-4 relative">
+                <input
+                  class="input border appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                  id="email" type="text" autofocus />
+                <label for="email"
+                  class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text">Name</label>
+              </div>
+              <div class="mb-4 relative">
+                <input
+                  class="input border appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                  id="email" type="text" autofocus />
+                <label for="email"
+                  class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text">Email</label>
+              </div>
+              <div class="mb-4 relative">
+                <input
+                  class="input border before:after:appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                  id="email" type="text" autofocus />
+                <label for="email"
+                  class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text">Phone</label>
+              </div>
+              <div class="mb-4 relative">
+                <textarea name="" id="" cols="30" rows="3"
+                  class="input border appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"></textarea>
+                <label for="password"
+                  class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base cursor-text">Message</label>
+              </div>
+              <div class="border rounded-md p-4">
+                <p class="text-sm py-2 text-desc">
+                  I consent that my personal data is stored according to
+                  2016/679/UE (UE GDPR).
+                </p>
+                <hr />
+                <div class="mt-4 flex items-center text-desc">
+                  <input type="checkbox" id="remember" name="remember" class="mr-2" />
+                  <label class="text-md" for="remember">I do accept Smarty
+                    <a class="text-primary hover:text-primary">terms & conditions.</a>
+                  </label>
+                </div>
+              </div>
+
+              <button class="bg-primary hover:bg-blue-dark text-white font-bold py-3 px-6 w-full rounded-lg mt-7">
+                Submit
+              </button>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script src="src/script.js"></script>
-  </body>
+    <!--!Footer   -->
+
+    <footer class="bg-primary">
+      <div class="container">
+        <div class="px-4 py-6 md:flex md:items-center md:justify-between">
+          <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2024 <a
+              href="https://flowbite.com/">DocuBark</a>. All Rights
+            Reserved.
+          </span>
+          <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 8 19">
+                <path fill-rule="evenodd"
+                  d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Facebook page</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 21 16">
+                <path
+                  d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+              </svg>
+              <span class="sr-only">Discord community</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 20 17">
+                <path fill-rule="evenodd"
+                  d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Twitter page</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">GitHub account</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="sr-only">Dribbble account</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="src/script.js"></script>
+</body>
+
 </html>
